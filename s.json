@@ -1,0 +1,16 @@
+{
+  "queries": [
+    {
+      "keywords": "list the name of cuttack",
+      "results": [
+        "Cuttack a",
+        "Cuttack b",
+        "Cuttack c"
+      ]
+    },
+    {
+      "keywords": "sunabesha",
+      "results": "s 1"
+    }
+  ]
+}
