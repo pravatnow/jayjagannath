@@ -38,6 +38,8 @@
   <ul id="searchResults" class="search-results"></ul>
 
   <script>
+<script src="Bb.json"></script>
+
     // Array of bird names for the search results
     const birdNames = [
       "Bald Eagle",
