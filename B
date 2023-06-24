@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Styling for responsiveness */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .search-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .search-results {
+      margin-top: 20px;
+    }
+
+    .search-results li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-container">
+    <input type="text" id="searchInput" class="search-input" placeholder="Search anything...">
+  </div>
+
+  <ul id="searchResults" class="search-results"></ul>
+
+  <script>
+    // Array of bird names for the search results
+    const birdNames = [
+      "Bald Eagle",
+      "Blue Jay",
+      "Cardinal",
+      "Hummingbird",
+      "Owl",
+      "Penguin",
+      "Robin",
+      "Sparrow",
+      "Toucan",
+      "Woodpecker"
+    ];
+
+    // Get references to the search input and results container
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    // Function to perform the search and display results
+    function performSearch() {
+      const searchTerm = searchInput.value.toLowerCase(); // Convert search term to lowercase for case-insensitive search
+      const matchingBirds = birdNames.filter(bird => bird.toLowerCase().includes(searchTerm)); // Filter bird names based on the search term
+
+      // Clear previous results
+      searchResults.innerHTML = "";
+
+      // Display matching bird names as search results
+      matchingBirds.forEach(bird => {
+        const li = document.createElement("li");
+        li.textContent = bird;
+        searchResults.appendChild(li);
+      });
+
+      // If no results found, display a message
+      if (matchingBirds.length === 0) {
+        const li = document.createElement("li");
+        li.textContent = "No results found.";
+        searchResults.appendChild(li);
+      }
+    }
+
+    // Attach an event listener to the search input
+    searchInput.addEventListener("input", performSearch);
+  </script>
+</body>
+</html>
